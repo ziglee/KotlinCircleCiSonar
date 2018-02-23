@@ -5,5 +5,7 @@ jobs:
       - image: circleci/android:api-26-alpha
     steps:
       - checkout
-      - run: ./gradlew dependencies
-      - run: ./gradlew sonarqube -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=37d89581af2b5b8e4a4ba5d997f8249515482182 -Dsonar.login=abcdef0123456789
+    test:
+      override:
+        - ./gradlew assembleDebug
+        - ./gradlew sonarqube -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=37d89581af2b5b8e4a4ba5d997f8249515482182 -Dsonar.login=abcdef0123456789
