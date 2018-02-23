@@ -5,9 +5,12 @@
 version: 2
 jobs:
   build:
+    dependencies:
+      pre:
+        - echo y | android update sdk --no-ui --all --filter "package-name"
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/android:api-26-alpha
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
