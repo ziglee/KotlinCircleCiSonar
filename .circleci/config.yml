@@ -13,4 +13,4 @@ jobs:
           command: ./gradlew dependencies
       - run:
           name: Sonarqube
-          command: ./gradlew sonarqube -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=ziglee-github -Dsonar.login=37d89581af2b5b8e4a4ba5d997f8249515482182 -Dsonar.branch=master
+          command: ./gradlew sonarqube -Dsonar.projectName=KotlinCircleCiSonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=ziglee-github -Dsonar.login=37d89581af2b5b8e4a4ba5d997f8249515482182 -Dsonar.branch.name=master
